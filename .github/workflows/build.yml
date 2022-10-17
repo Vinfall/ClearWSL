@@ -6,10 +6,9 @@ on:
     # Trigger only when Makefile is changed
     paths: ['Makefile']
   workflow_dispatch:
-      inputs:
   schedule:
-    # Trigger every Sunday at 23:50 UTC
-    - cron: "50 23 * * sun"
+    # Trigger every Saturday at 11:59 UTC
+    - cron: "59 11 * * sat"
 
 jobs:
   build:
