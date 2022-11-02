@@ -1,10 +1,12 @@
 # ClearWSL
-Clear Linux on WSL2 (Windows 10 FCU or later)
+Clear Linux OS on WSL2 (Windows 10 FCU or later)
 inspired by [ClearWSL](https://github.com/wight554/ClearWSL/)
-based on [wsldl](https://github.com/yuk7/wsldl)
+based on [wsldl](https://github.com/yuk7/wsldl).
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 ![License](https://img.shields.io/github/license/Vinfall/ClearWSL.svg?style=flat-square)
+
+**Notice: This is Clear Linux OS backed by Intel. Not to be confused with Clear OS, which is a completely different CentOS/RHEL-based distro.**
 
 ## Requirements
 * Windows 10 Fall Creators Update x64 or later.
