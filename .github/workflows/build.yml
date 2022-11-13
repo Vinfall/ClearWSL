@@ -25,14 +25,15 @@ jobs:
       - run: mkdir -p release
       - name: install dependencies
         run: sudo apt install -y curl libarchive-tools jq tar unzip xz-utils
-      - name: build package
+      - name: build package & make hash
         run: |
              sudo make
              sudo make clean
-             mv Clear.zip release/Clear.zip
+             sha512sum Clear.zip > Clear.zip.sha512
+             mv Clear.zip* release/
       - name: save release as artifact
         uses: actions/upload-artifact@v3
         with:
           retention-days: 10
-          name: Clear.zip
+          name: Clear-packed.zip
           path: release
