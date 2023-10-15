@@ -91,4 +91,4 @@ Usage :
 ## Todo
 
 - [x] Add CI (GitHub Actions)
-- [ ] Fix warning about `WSL (XX) ERROR: CreateProcessEntryCommon:XXX: getpwuid(0) failed 2`
+- [ ] Fix warning about `WSL (XX) ERROR: CreateProcessEntryCommon:XXX: getpwuid(0) failed 2` according to [microsoft/WSL#5923]([url](https://github.com/microsoft/WSL/issues/5923#issuecomment-1684949247)https://github.com/microsoft/WSL/issues/5923#issuecomment-1684949247) or another issue I forgot to take note, or do some dirty hack on `/etc/fstab` or `/etc/wsl.conf`
