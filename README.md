@@ -14,7 +14,7 @@ based on [wsldl](https://github.com/yuk7/wsldl).
 
 ## Install
 
-1. Download installer zip from [release](https://github.com/Vinfall/ClearWSL/releases/latest) or [weekly action build](https://github.com/Vinfall/ClearWSL/releases/tag/action-build) (recommended)
+1. Download installer zip from [release](https://github.com/Vinfall/ClearWSL/releases/latest) or [monthly action build](https://github.com/Vinfall/ClearWSL/releases/tag/action-build) (recommended)
 2. Extract all files in zip file to same directory (e.g. `C:\WSL\Clear`)
 3. Run `Clear.exe` to Extract rootfs and Register to WSL
 
