@@ -1,4 +1,5 @@
 # ClearWSL
+
 Clear Linux OS on WSL2 (Windows 10 FCU or later)
 inspired by [ClearWSL](https://github.com/wight554/ClearWSL/)
 based on [wsldl](https://github.com/yuk7/wsldl).
@@ -9,12 +10,14 @@ based on [wsldl](https://github.com/yuk7/wsldl).
 **Notice: This is *Clear Linux OS* backed by Intel. Not to be confused with *Clear OS*, which is a completely different CentOS/RHEL-based distro.**
 
 ## Requirements
-* Windows 10 Fall Creators Update x64 or later.
+
+* Windows 10 1803 April 2018 Update x64 or later.
 * Windows Subsystem for Linux feature is enabled.
+* Latest WSL recommended.
 
 ## Install
 
-1. Download installer zip from [release](https://github.com/Vinfall/ClearWSL/releases/latest) or [monthly action build](https://github.com/Vinfall/ClearWSL/releases/tag/action-build) (recommended)
+1. Download installer zip from [release](https://github.com/Vinfall/ClearWSL/releases/latest) or [action build](https://github.com/Vinfall/ClearWSL/releases/tag/action-build) (recommended)
 2. Extract all files in zip file to same directory (e.g. `C:\WSL\Clear`)
 3. Run `Clear.exe` to Extract rootfs and Register to WSL
 
@@ -57,35 +60,65 @@ For further information, please read [the official documentation for Clear Linux
 
 ## How-to-Use (for Installed Instance)
 
-### exe Usage
-```dos
+### Usage
+
+```powershell
 Usage :
     <no args>
       - Open a new shell with your default settings.
+
     run <command line>
       - Run the given command line in that distro. Inherit current directory.
+
+    runp <command line (includes windows path)>
+      - Run the path translated command line in that distro.
+
     config [setting [value]]
       - `--default-user <user>`: Set the default user for this distro to <user>
       - `--default-uid <uid>`: Set the default user uid for this distro to <uid>
       - `--append-path <on|off>`: Switch of Append Windows PATH to $PATH
       - `--mount-drive <on|off>`: Switch of Mount drives
+      - `--default-term <default|wt|flute>`: Set default terminal window
+
     get [setting]
       - `--default-uid`: Get the default user uid in this distro
       - `--append-path`: Get on/off status of Append Windows PATH to $PATH
       - `--mount-drive`: Get on/off status of Mount drives
-      - `--lxuid`: Get LxUID key for this distro
-    backup
-      - Output backup.tar.gz to the current directory using tar command.
-      
+      - `--wsl-version`: Get WSL Version 1/2 for this distro
+      - `--default-term`: Get Default Terminal for this distro launcher
+      - `--lxguid`: Get WSL GUID key for this distro
+
+    backup [contents]
+      - `--tgz`: Output backup.tar.gz to the current directory using tar command
+      - `--reg`: Output settings registry file to the current directory
+
     clean
       - Uninstall the distro.
+
     help
       - Print this usage message.
 ```
 
-### How to uninstall instance
-```dos
->Clear.exe clean
+### Uninstall
+
+```powershell
+.\Clear.exe clean
+```
+
+## How-to-Build
+
+ClearWSL can be built on GNU/Linux or WSL.
+
+`curl`, `bsdtar`, `jq` and `unzip` is required for build.
+
+```bash
+# Install build tools
+sudo apt install -y curl libarchive-tools jq unzip
+# Make release
+# Use of `sudo` recommended to avoid weird file permission in rootfs
+sudo make
+# Clean-up using `sudo` as some files are owned by root
+sudo make clean
 ```
 
 ## Todo
