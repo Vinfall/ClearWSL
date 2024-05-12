@@ -1,0 +1,7 @@
+# config
+.vscode
+# make cache
+*.zip
+*.exe
+rootfs.*
+ziproot
